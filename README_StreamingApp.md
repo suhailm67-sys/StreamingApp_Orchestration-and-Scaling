@@ -46,4 +46,8 @@ aws sts get-caller-identity
 
 ### Step 4: Creating ECR Repositories 
 Create repository for each services seperately
-1. Frontend - 
+1. Frontend Service - `aws ecr create-repository --repository-name frontend --region us-east-1` - <img width="1517" height="421" alt="image" src="https://github.com/user-attachments/assets/94319ab8-e7b9-4ae1-aae3-cfec4f9fc440" />
+2. Auth Service - `aws ecr create-repository --repository-name auth-service --region us-east-1` - <img width="1507" height="426" alt="image" src="https://github.com/user-attachments/assets/e57e213f-9b81-433a-aed4-bd3bb10baeb7" />
+3. Streaming Service - `ws ecr create-repository --repository-name streaming-service --region us-east-1` - <img width="1506" height="426" alt="image" src="https://github.com/user-attachments/assets/1939136b-f993-4b7f-822a-277b16b0ad54" />
+4. Admin Service - `aws ecr create-repository --repository-name admin-service --region us-east-1` - <img width="1522" height="437" alt="image" src="https://github.com/user-attachments/assets/ee4106af-5160-4a12-a9eb-89ef6cb664de" />
+5. Chat Service - `aws ecr create-repository --repository-name chat-service --region us-east-1` - <img width="1520" height="425" alt="image" src="https://github.com/user-attachments/assets/52d64366-d383-4a45-b589-e2ba13878024" />
