@@ -7,7 +7,8 @@ Graded Project on Orchestration and Scaling in Jenkins
 1. Fork the main repository into your GitHub account.
   - Open the repo link - `https://github.com/UnpredictablePrashant/StreamingApp.git`
   - Click on `fork`
-  - The main repo is now forked to the Git Hub account - <img width="1553" height="566" alt="image" src="https://github.com/user-attachments/assets/e7297417-78c3-4721-9cbf-fdc513d2d3be" />
+  - The main repo is now forked to the Git Hub account - <img width="1577" height="581" alt="image" src="https://github.com/user-attachments/assets/b196db13-bae8-4c98-8e4e-7554293d843a" />
+
 2. Clone the fork on the local machine - `git clone https://github.com/suhailm67-sys/Project-on-Orchestration-and-Scaling-in-Jenkins.git` - <img width="1863" height="206" alt="image" src="https://github.com/user-attachments/assets/e3b782bf-b114-4cfc-8a02-df06d6b9e0d8" />
 3. Verify remote - `git remote -v` - <img width="1491" height="70" alt="image" src="https://github.com/user-attachments/assets/c6076da0-3993-4e62-83d0-21391bdf59c6" />
 4. Add Upstream Repository - `git remote add upstream https://github.com/UnpredictablePrashant/SampleMERNwithMicroservices.git` - <img width="1887" height="156" alt="image" src="https://github.com/user-attachments/assets/c826f6b6-e245-44c3-9bcd-27d73b263ec6" />
