@@ -19,4 +19,5 @@ Graded Project on Orchestration and Scaling on Streaming App
   - Push to your GitHub - `git push origin main` - <img width="1452" height="67" alt="image" src="https://github.com/user-attachments/assets/5453913d-bae4-41ec-ad99-0078f96c0012" />
 
 ### Step 2: Prepare the MERN Application
-Since docker file has already been setup and configured, not required to setup the docker file again. Docker files are available in backend >> adminService|authService|chatService|streaming|Service >> Dockerfile, frontend >> Dockerfile
+Since docker file has already been setup and configured, not required to setup the docker file again. 
+Docker files are available in backend >> adminService | authService | chatService | streaming | Service >> Dockerfile, frontend >> Dockerfile
