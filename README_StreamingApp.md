@@ -21,3 +21,29 @@ Graded Project on Orchestration and Scaling on Streaming App
 ### Step 2: Prepare the MERN Application
 Since docker file has already been setup and configured, not required to setup the docker file again. 
 Docker files are available in backend >> adminService | authService | chatService | streaming | Service >> Dockerfile, frontend >> Dockerfile
+
+### Step 3: Download, Install and configure AWS CLI
+```# Download and install AWS CLI v2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install
+
+# Verify
+/usr/local/bin/aws --version
+# aws-cli/2.35.11
+```
+```
+aws configure
+# AWS Access Key ID: [your-access-key]
+# AWS Secret Access Key: [your-secret-key]
+# Default region: us-east-1
+# Default output: json
+
+# Verify
+aws sts get-caller-identity
+```
+<img width="1577" height="150" alt="image" src="https://github.com/user-attachments/assets/1daf3759-be2c-4d5c-b20c-74888196bb76" />
+
+### Step 4: Creating ECR Repositories 
+Create repository for each services seperately
+1. Frontend - 
