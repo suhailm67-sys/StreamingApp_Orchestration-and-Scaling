@@ -11,9 +11,10 @@ Graded Project on Orchestration and Scaling in Jenkins
 
 2. Clone the fork on the local machine - `git clone https://github.com/suhailm67-sys/StreamingApp_Orchestration-and-Scaling.git` - <img width="1442" height="211" alt="image" src="https://github.com/user-attachments/assets/c4f645ff-5129-4c78-8056-88d1110b55ff" />
 3. Verify remote - `git remote -v` - <img width="1372" height="76" alt="image" src="https://github.com/user-attachments/assets/5c9e8495-07c2-4837-872d-5ec1155f3d3f" />
-4. Add Upstream Repository - `git remote add upstream https://github.com/UnpredictablePrashant/StreamingApp.git` - <img width="1887" height="156" alt="image" src="https://github.com/user-attachments/assets/c826f6b6-e245-44c3-9bcd-27d73b263ec6" />
+4. Add Upstream Repository - `git remote add upstream https://github.com/UnpredictablePrashant/StreamingApp.git` - <img width="1452" height="160" alt="image" src="https://github.com/user-attachments/assets/1564a929-4e0d-44d7-bbfc-fae056b96bd4" />
 5. Sync with Upstream
-  - Whenever the original repository changes, fetch latest - `git fetch upstream` - <img width="1576" height="235" alt="image" src="https://github.com/user-attachments/assets/a8916091-d45b-4f05-a829-056a7e5fbc4d" />
-  - Switch - `git checkout main` - <img width="1533" height="65" alt="image" src="https://github.com/user-attachments/assets/ed298edf-7022-4eea-8206-ff8ed0e526c0" />
-  - Merge - `git merge upstream/main` - <img width="1612" height="47" alt="image" src="https://github.com/user-attachments/assets/fe5b383a-be74-4e94-94b8-9b9b69efd496" />
-  - Push to your GitHub - `git push origin main` - <img width="1627" height="77" alt="image" src="https://github.com/user-attachments/assets/ef159e89-fae6-4278-abc5-d4a32c5d1c91" />
+  - Whenever the original repository changes, fetch latest - `git fetch upstream` - <img width="1432" height="206" alt="image" src="https://github.com/user-attachments/assets/9720609d-ba00-4cbc-a038-136fead637da" />
+  - Switch - `git checkout main` - <img width="1436" height="71" alt="image" src="https://github.com/user-attachments/assets/5ad4f8b1-c471-43f6-bd07-c27564f5298d" />
+  - Merge - `git merge upstream/main` - <img width="1497" height="52" alt="image" src="https://github.com/user-attachments/assets/270c16ba-9706-49a4-953e-771b8f71e326" />
+  - Push to your GitHub - `git push origin main` - <img width="1452" height="67" alt="image" src="https://github.com/user-attachments/assets/5453913d-bae4-41ec-ad99-0078f96c0012" />
+
