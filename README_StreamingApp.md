@@ -64,3 +64,10 @@ Create repository for each services seperately
 #### Similarly verify from the remaining services (Admin, Auth, Chat and Streaming)
 
 ### Step 6: Continuous Integration (CI) using Jenkins
+#### Set Up Jenkins
+1. Access Jenkins from the URL- https://jenkinsacademics.herovired.com/
+2. Add AWS Credentials to Jenkins
+  1. Go to Manage Jenkins >> Credentials
+  2. Click Add Credentials and select AWS Credentials
+  3. Update the AWS Access Key and AWS Secret Key, then click on Create
+#### 
