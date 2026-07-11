@@ -52,7 +52,7 @@ Create repository for each services seperately
 4. Admin Service - `aws ecr create-repository --repository-name admin-service --region us-east-1` - <img width="1522" height="437" alt="image" src="https://github.com/user-attachments/assets/ee4106af-5160-4a12-a9eb-89ef6cb664de" />
 5. Chat Service - `aws ecr create-repository --repository-name chat-service --region us-east-1` - <img width="1520" height="425" alt="image" src="https://github.com/user-attachments/assets/52d64366-d383-4a45-b589-e2ba13878024" />
 
-### Step 4: Build, Tag and Push Docker Images
+### Step 5: Build, Tag and Push Docker Images
 #### 1. Frontend Service
   1. Build the image - `docker build -t frontend:latest ./frontend` - <img width="1721" height="941" alt="image" src="https://github.com/user-attachments/assets/581a02c1-6e80-4731-ba7d-bb2a6bd03132" />
   2. Tag the image - `docker tag frontend:latest 663130434850.dkr.ecr.us-east-1.amazonaws.com/frontend:latest` - <img width="1882" height="66" alt="image" src="https://github.com/user-attachments/assets/1f002338-05d6-4d6b-8d2b-9cc93d0984d0" />
@@ -62,3 +62,5 @@ Create repository for each services seperately
 1. From AWS Console - `AWS Console >> Amazon ECR >> Private repositories` - <img width="1907" height="587" alt="image" src="https://github.com/user-attachments/assets/bda202db-842a-4a2f-932d-418ef3c5f3e4" />
 2. From Power Shell - `aws ecr list-images --repository-name frontend --region us-east-1` - <img width="1865" height="382" alt="image" src="https://github.com/user-attachments/assets/018231a6-6e92-4b3f-80a2-b371b662c93c" />
 #### Similarly verify from the remaining services (Admin, Auth, Chat and Streaming)
+
+### Step 6: Continuous Integration (CI) using Jenkins
