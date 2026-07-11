@@ -69,5 +69,6 @@ Create repository for each services seperately
 2. Add AWS Credentials to Jenkins
   1. Go to Manage Jenkins >> Credentials
   2. Click Add Credentials and select AWS Credentials
-  3. Update the AWS Access Key and AWS Secret Key, then click on Create
+  3. Update the AWS Access Key and AWS Secret Key, then click on Create - <img width="680" height="111" alt="image" src="https://github.com/user-attachments/assets/3f59985f-b2f9-4d7e-8c18-058e9316b9a5" />
+
 #### 
