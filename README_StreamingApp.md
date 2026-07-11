@@ -53,8 +53,12 @@ Create repository for each services seperately
 5. Chat Service - `aws ecr create-repository --repository-name chat-service --region us-east-1` - <img width="1520" height="425" alt="image" src="https://github.com/user-attachments/assets/52d64366-d383-4a45-b589-e2ba13878024" />
 
 ### Step 4: Build, Tag and Push Docker Images
-#### Frontend Service
+#### 1. Frontend Service
   1. Build the image - `docker build -t frontend:latest ./frontend` - <img width="1721" height="941" alt="image" src="https://github.com/user-attachments/assets/581a02c1-6e80-4731-ba7d-bb2a6bd03132" />
   2. Tag the image - `docker tag frontend:latest 663130434850.dkr.ecr.us-east-1.amazonaws.com/frontend:latest` - <img width="1882" height="66" alt="image" src="https://github.com/user-attachments/assets/1f002338-05d6-4d6b-8d2b-9cc93d0984d0" />
   3. Push the image - `docker push 663130434850.dkr.ecr.us-east-1.amazonaws.com/frontend:latest` - <img width="1192" height="325" alt="image" src="https://github.com/user-attachments/assets/6baca303-cf05-47d9-a74d-97fd4be8a7ff" />
-#### Follow the above same process to Build, Tag and Push the remaining Auth, Streaming, Admin and Chat service images
+#### 2. Follow the above same process to Build, Tag and Push the remaining Auth, Streaming, Admin and Chat service images
+#### 3. Verify the Images in ECR
+1. From AWS Console - `AWS Console >> Amazon ECR >> Private repositories` - <img width="1907" height="587" alt="image" src="https://github.com/user-attachments/assets/bda202db-842a-4a2f-932d-418ef3c5f3e4" />
+2. From Power Shell - `aws ecr list-images --repository-name frontend --region us-east-1` - <img width="1865" height="382" alt="image" src="https://github.com/user-attachments/assets/018231a6-6e92-4b3f-80a2-b371b662c93c" />
+#### Similarly verify from the remaining services (Admin, Auth, Chat and Streaming)
