@@ -1,5 +1,5 @@
 # Graded Project on Orchestration and Scaling
-Graded Project on Orchestration and Scaling in Jenkins
+Graded Project on Orchestration and Scaling on Streaming App
 
 ## Project Workflow
 
@@ -18,3 +18,4 @@ Graded Project on Orchestration and Scaling in Jenkins
   - Merge - `git merge upstream/main` - <img width="1497" height="52" alt="image" src="https://github.com/user-attachments/assets/270c16ba-9706-49a4-953e-771b8f71e326" />
   - Push to your GitHub - `git push origin main` - <img width="1452" height="67" alt="image" src="https://github.com/user-attachments/assets/5453913d-bae4-41ec-ad99-0078f96c0012" />
 
+### Step 2: Prepare the MERN Application
