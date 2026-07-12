@@ -82,3 +82,5 @@ Create repository for each services seperately
   5. Script Path: Jenkinsfile and Save
 <img width="1012" height="692" alt="image" src="https://github.com/user-attachments/assets/5ed08b39-3207-406c-8090-baf3482a3f84" />
 
+### Step 7: Install Jenkins on an AWS EC2 instance
+#### Create a EC2 instance first to launch Jenkins in it - <img width="1620" height="222" alt="image" src="https://github.com/user-attachments/assets/2c9582dc-536e-430d-9583-1664b5152b9c" />
