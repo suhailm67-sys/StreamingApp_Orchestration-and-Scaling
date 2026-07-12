@@ -86,3 +86,5 @@ Create repository for each services seperately
 1. Create a EC2 instance first to launch Jenkins in it - <img width="1620" height="222" alt="image" src="https://github.com/user-attachments/assets/2c9582dc-536e-430d-9583-1664b5152b9c" />
 2. SSH into the EC2 instance and install the prequisits like `sudo apt update`,`sudo apt upgrade -y`, `sudo apt install openjdk-21-jdk -y`, `sudo apt install git -y`
 3. Install and start docker in EC2 - `sudo apt install docker.io -y`, `sudo systemctl start docker`, `sudo systemctl enable docker` - <img width="1121" height="355" alt="image" src="https://github.com/user-attachments/assets/4887b90e-bc64-4afe-a0b3-5f8ef80f898d" />
+4. Install AWS CLI in EC2 - `sudo apt install unzip curl -y`, `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`, `unzip awscliv2.zip`, `sudo ./aws/install`
+5. Add the Jenkins repository - 
