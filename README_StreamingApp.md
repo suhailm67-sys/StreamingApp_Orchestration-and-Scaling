@@ -71,4 +71,14 @@ Create repository for each services seperately
   2. Click Add Credentials and select AWS Credentials
   3. Update the AWS Access Key and AWS Secret Key, then click on Create - <img width="680" height="111" alt="image" src="https://github.com/user-attachments/assets/3f59985f-b2f9-4d7e-8c18-058e9316b9a5" />
 
-#### 
+####  Create Jenkins Pipeline Job
+1. New Item Name: Suhail-StreamingApp-Pipeline
+2. Select Pipeline OK
+3. Pipeline section:
+  1. Definition: Pipeline script from SCM
+  2. SCM: Git
+  3. Repository URL: https://github.com/suhailm67-sys/StreamingApp_Orchestration-and-Scaling.git
+  4. Branch: */main
+  5. Script Path: Jenkinsfile and Save
+<img width="1012" height="692" alt="image" src="https://github.com/user-attachments/assets/5ed08b39-3207-406c-8090-baf3482a3f84" />
+
