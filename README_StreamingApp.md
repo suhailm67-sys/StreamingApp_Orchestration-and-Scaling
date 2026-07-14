@@ -87,4 +87,8 @@ Create repository for each services seperately
 2. SSH into the EC2 instance and install the prequisits like `sudo apt update`,`sudo apt upgrade -y`, `sudo apt install openjdk-21-jdk -y`, `sudo apt install git -y`
 3. Install and start docker in EC2 - `sudo apt install docker.io -y`, `sudo systemctl start docker`, `sudo systemctl enable docker` - <img width="1121" height="355" alt="image" src="https://github.com/user-attachments/assets/4887b90e-bc64-4afe-a0b3-5f8ef80f898d" />
 4. Install AWS CLI in EC2 - `sudo apt install unzip curl -y`, `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`, `unzip awscliv2.zip`, `sudo ./aws/install`
-5. Add the Jenkins repository - 
+5. Install kubectl v1.29 (EKS compatible) - `curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.6/2024-07-12/bin/linux/amd64/kubectl`, `chmod +x kubectl`, `mv kubectl /usr/local/bin/kubectl`
+6. Install eksctl - `curl --silent --location "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp`, `mv /tmp/eksctl /usr/local/bin`
+7. Install Helm - `curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`
+8. Verify all - `kubectl version --client`, `eksctl version`, `helm version` - <img width="1457" height="182" alt="image" src="https://github.com/user-attachments/assets/af10e583-7715-4547-8fb3-6b9f3c89c076" />
+
