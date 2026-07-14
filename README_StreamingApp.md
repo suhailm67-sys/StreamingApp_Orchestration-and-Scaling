@@ -210,7 +210,7 @@ pipeline {
 7. Configure the Pipeline Job
   1. Definition: Pipeline script from SCM
   2. SCM: Git
-  3. Repository URL: 
+  3. Repository URL: `https://github.com/suhailm67-sys/StreamingApp_Orchestration-and-Scaling.git`
   4. Credentials: Your GitHub credentials
   5. Branch: */main
   6. Script Path: Jenkinsfile
