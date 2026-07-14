@@ -98,3 +98,121 @@ https://pkg.jenkins.io/debian-stable binary/ \
 /etc/apt/sources.list.d/jenkins.list > /dev/null`, `sudo apt update`, `sudo apt install jenkins -y`
 10. Configure necessary plugins and credentials - `sudo systemctl enable jenkins`, `sudo systemctl start jenkins` and install plugins by logging in to the EC2 `http://EC2-IP:8080` - <img width="1912" height="592" alt="image" src="https://github.com/user-attachments/assets/ae0b894f-ee05-4a47-8bab-e8b7b3b8250f" />
 
+### Step 8: Create Jenkins Pipelines
+1. Install Docker Inside the Jenkins Container - `sudo docker exec -it jenkins bash`
+2. Install AWS CLI Inside Jenkins - `sudo docker exec -it jenkins bash`
+3. Add AWS Credentials in Jenkins
+4. Add GitHub Credentials
+5. Add Environment Variables
+6. Create Jenkinsfile
+```
+pipeline {
+
+    agent any
+
+    environment {
+
+        AWS_REGION = 'us-east-1'
+        AWS_ACCOUNT_ID = '663130434850'
+
+        FRONTEND_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/frontend"
+
+        AUTH_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/auth-service"
+
+        STREAMING_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/streaming-service"
+
+        ADMIN_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/admin-service"
+
+        CHAT_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/chat-service"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Login ECR') {
+            steps {
+                sh '''
+                aws ecr get-login-password --region us-east-1 | \
+                docker login --username AWS --password-stdin \
+                ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com
+                '''
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                sh '''
+                docker build -t $FRONTEND_REPO:latest \
+                -f frontend/Dockerfile frontend
+                '''
+            }
+        }
+
+        stage('Build Auth Service') {
+            steps {
+                sh '''
+                docker build -t $AUTH_REPO:latest \
+                -f backend/authService/Dockerfile backend
+                '''
+            }
+        }
+
+        stage('Build Streaming Service') {
+            steps {
+                sh '''
+                docker build -t $STREAMING_REPO:latest \
+                -f backend/streamingService/Dockerfile backend
+                '''
+            }
+        }
+
+        stage('Build Admin Service') {
+            steps {
+                sh '''
+                docker build -t $ADMIN_REPO:latest \
+                -f backend/adminService/Dockerfile backend
+                '''
+            }
+        }
+
+        stage('Build Chat Service') {
+            steps {
+                sh '''
+                docker build -t $CHAT_REPO:latest \
+                -f backend/chatService/Dockerfile backend
+                '''
+            }
+        }
+
+        stage('Push Images') {
+
+            steps {
+
+                sh '''
+                docker push $FRONTEND_REPO:latest
+                docker push $AUTH_REPO:latest
+                docker push $STREAMING_REPO:latest
+                docker push $ADMIN_REPO:latest
+                docker push $CHAT_REPO:latest
+                '''
+            }
+        }
+
+    }
+
+}
+```
+7. Configure the Pipeline Job
+  1. Definition: Pipeline script from SCM
+  2. SCM: Git
+  3. Repository URL: 
+  4. Credentials: Your GitHub credentials
+  5. Branch: */main
+  6. Script Path: Jenkinsfile
+9. Trigger Builds Automatically
+10. Configure GitHub Webhook - `Settings → Webhooks → Add webhook`
