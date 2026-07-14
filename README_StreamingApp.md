@@ -91,4 +91,9 @@ Create repository for each services seperately
 6. Install eksctl - `curl --silent --location "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp`, `mv /tmp/eksctl /usr/local/bin`
 7. Install Helm - `curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`
 8. Verify all - `kubectl version --client`, `eksctl version`, `helm version` - <img width="1457" height="182" alt="image" src="https://github.com/user-attachments/assets/af10e583-7715-4547-8fb3-6b9f3c89c076" />
-
+9. Install Jenkins - `curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key \ | sudo tee \ /usr/share/keyrings/jenkins-keyring.asc > /dev/null`, `echo deb \
+[signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+https://pkg.jenkins.io/debian-stable binary/ \
+| sudo tee \
+/etc/apt/sources.list.d/jenkins.list > /dev/null`, `sudo apt update`, `sudo apt install jenkins -y`
+10. Configure necessary plugins and credentials - `sudo systemctl enable jenkins`, `sudo systemctl start jenkins` and install plugins by logging in to the EC2 `http://EC2-IP:8080`
