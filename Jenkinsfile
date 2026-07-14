@@ -72,7 +72,7 @@ pipeline {
                 sh '''
                 docker build \
                 -t $AUTH_REPO:$IMAGE_TAG \
-                -f backend/authService/Dockerfile backend
+                ./backend/authService
                 '''
 
             }
