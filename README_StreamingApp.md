@@ -281,3 +281,7 @@ pipeline {
 2. This confirms that the build is triggering automatically when a commit is made in the Git Repository
 <img width="1377" height="442" alt="image" src="https://github.com/user-attachments/assets/f2238d75-a5b3-401e-ac93-ca8b770e419c" />
 
+### Step 10: Kubernetes Deployment (EKS)
+#### 1. Create an EKS Cluster
+1. Before creating an EKS cluster verify IAM Permissions - <img width="1287" height="382" alt="image" src="https://github.com/user-attachments/assets/d6def7bd-0568-40e2-a56c-ac83a0dd53e4" />
+2. Create the EKS Cluster - 
