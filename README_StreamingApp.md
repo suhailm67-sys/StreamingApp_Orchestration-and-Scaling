@@ -277,4 +277,7 @@ pipeline {
 <img width="1547" height="537" alt="image" src="https://github.com/user-attachments/assets/86ba4f4d-3461-41da-89d7-9716b72de1f6" />
 
 ### Step 9: Trigger builds automatically on new commits from the Git repository
-1. Modify a file in repository, commit it and push it.
+1. Modify a file in repository, commit it and push it - <img width="980" height="322" alt="image" src="https://github.com/user-attachments/assets/4080cf19-55aa-400f-be3d-48b3ac2d4656" />
+2. This confirms that the build is triggering automatically when a commit is made in the Git Repository
+<img width="1377" height="442" alt="image" src="https://github.com/user-attachments/assets/f2238d75-a5b3-401e-ac93-ca8b770e419c" />
+
