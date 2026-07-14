@@ -96,4 +96,5 @@ Create repository for each services seperately
 https://pkg.jenkins.io/debian-stable binary/ \
 | sudo tee \
 /etc/apt/sources.list.d/jenkins.list > /dev/null`, `sudo apt update`, `sudo apt install jenkins -y`
-10. Configure necessary plugins and credentials - `sudo systemctl enable jenkins`, `sudo systemctl start jenkins` and install plugins by logging in to the EC2 `http://EC2-IP:8080`
+10. Configure necessary plugins and credentials - `sudo systemctl enable jenkins`, `sudo systemctl start jenkins` and install plugins by logging in to the EC2 `http://EC2-IP:8080` - <img width="1912" height="592" alt="image" src="https://github.com/user-attachments/assets/ae0b894f-ee05-4a47-8bab-e8b7b3b8250f" />
+
