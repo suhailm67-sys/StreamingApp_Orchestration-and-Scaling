@@ -86,7 +86,8 @@ pipeline {
                 sh '''
                 docker build \
                 -t $ADMIN_REPO:$IMAGE_TAG \
-                ./backend/adminService
+                -f backend/adminService/Dockerfile \
+                backend
                 '''
 
             }
