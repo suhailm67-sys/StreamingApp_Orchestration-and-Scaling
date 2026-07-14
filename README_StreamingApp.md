@@ -268,5 +268,13 @@ pipeline {
   6. Script Path: Jenkinsfile
 9. Trigger Builds Automatically
 10. Configure GitHub Webhook - `Settings → Webhooks → Add webhook`
-<img width="832" height="642" alt="image" src="https://github.com/user-attachments/assets/421215cd-b637-46b5-816b-c8a1b818980f" />
+<img width="1131" height="647" alt="image" src="https://github.com/user-attachments/assets/f3a1819b-3bc1-46c3-b925-977bd2c9b79c" />
 
+### Step 8: Build and push Docker images to ECR using Jenkins jobs
+1. Once the build is complete by configuring the triggers and webhooks, open jenkins and click on `Build Now`
+2. Once the buid is completed it will show as success - <img width="1877" height="802" alt="image" src="https://github.com/user-attachments/assets/15a833fa-1fd8-4869-9809-514e0b6ae544" />
+3. Verify the images if they have been updated in AWS ECR - <img width="1541" height="592" alt="image" src="https://github.com/user-attachments/assets/7ca16829-9011-41d6-9c1e-b90f7e29eae9" />
+<img width="1547" height="537" alt="image" src="https://github.com/user-attachments/assets/86ba4f4d-3461-41da-89d7-9716b72de1f6" />
+
+### Step 9: Trigger builds automatically on new commits from the Git repository
+1. Modify a file in repository, commit it and push it.
