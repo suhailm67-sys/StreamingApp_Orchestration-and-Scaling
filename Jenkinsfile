@@ -101,7 +101,8 @@ pipeline {
                 sh '''
                 docker build \
                 -t $CHAT_REPO:$IMAGE_TAG \
-                ./backend/chatService
+                -f backend/chatService/Dockerfile \
+                backend
                 '''
 
             }
@@ -115,7 +116,8 @@ pipeline {
                 sh '''
                 docker build \
                 -t $STREAMING_REPO:$IMAGE_TAG \
-                ./backend/streamingService
+                -f backend/streamingService/Dockerfile \
+                backend
                 '''
 
             }
