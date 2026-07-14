@@ -216,3 +216,5 @@ pipeline {
   6. Script Path: Jenkinsfile
 9. Trigger Builds Automatically
 10. Configure GitHub Webhook - `Settings → Webhooks → Add webhook`
+<img width="832" height="642" alt="image" src="https://github.com/user-attachments/assets/421215cd-b637-46b5-816b-c8a1b818980f" />
+
