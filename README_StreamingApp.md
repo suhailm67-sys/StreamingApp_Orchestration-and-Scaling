@@ -112,81 +112,124 @@ pipeline {
 
     environment {
 
-        AWS_REGION = 'us-east-1'
-        AWS_ACCOUNT_ID = '663130434850'
+        AWS_REGION = "us-east-1"
 
-        FRONTEND_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/frontend"
+        ACCOUNT_ID = "663130434850"
 
-        AUTH_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/auth-service"
+        FRONTEND_REPO = "${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/frontend"
 
-        STREAMING_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/streaming-service"
+        AUTH_REPO = "${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/auth-service"
 
-        ADMIN_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/admin-service"
+        ADMIN_REPO = "${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/admin-service"
 
-        CHAT_REPO = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/chat-service"
+        CHAT_REPO = "${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/chat-service"
+
+        STREAMING_REPO = "${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/streaming-service"
+
+        IMAGE_TAG = "${BUILD_NUMBER}"
+
     }
 
     stages {
 
         stage('Checkout') {
+
             steps {
-                checkout scm
+
+                git branch: 'main',
+                url: 'https://github.com/suhailm67-sys/StreamingApp_Orchestration-and-Scaling.git'
+
             }
+
         }
 
-        stage('Login ECR') {
+        stage('Login to ECR') {
+
             steps {
+
                 sh '''
-                aws ecr get-login-password --region us-east-1 | \
-                docker login --username AWS --password-stdin \
-                ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com
+                aws ecr get-login-password --region $AWS_REGION \
+                | docker login \
+                --username AWS \
+                --password-stdin \
+                $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
                 '''
+
             }
+
         }
 
         stage('Build Frontend') {
+
             steps {
+
                 sh '''
-                docker build -t $FRONTEND_REPO:latest \
-                -f frontend/Dockerfile frontend
+                docker build \
+                -t $FRONTEND_REPO:$IMAGE_TAG \
+                ./frontend
                 '''
+
             }
+
         }
 
         stage('Build Auth Service') {
-            steps {
-                sh '''
-                docker build -t $AUTH_REPO:latest \
-                -f backend/authService/Dockerfile backend
-                '''
-            }
-        }
 
-        stage('Build Streaming Service') {
             steps {
+
                 sh '''
-                docker build -t $STREAMING_REPO:latest \
-                -f backend/streamingService/Dockerfile backend
+                docker build \
+                -t $AUTH_REPO:$IMAGE_TAG \
+                ./backend/authService
                 '''
+
             }
+
         }
 
         stage('Build Admin Service') {
+
             steps {
+
                 sh '''
-                docker build -t $ADMIN_REPO:latest \
-                -f backend/adminService/Dockerfile backend
+                docker build \
+                -t $ADMIN_REPO:$IMAGE_TAG \
+                -f backend/adminService/Dockerfile \
+                backend
                 '''
+
             }
+
         }
 
         stage('Build Chat Service') {
+
             steps {
+
                 sh '''
-                docker build -t $CHAT_REPO:latest \
-                -f backend/chatService/Dockerfile backend
+                docker build \
+                -t $CHAT_REPO:$IMAGE_TAG \
+                -f backend/chatService/Dockerfile \
+                backend
                 '''
+
             }
+
+        }
+
+        stage('Build Streaming Service') {
+
+            steps {
+
+                sh '''
+                docker build \
+                -t $STREAMING_REPO:$IMAGE_TAG \
+                -f backend/streamingService/Dockerfile \
+                backend
+                '''
+
+            }
+
         }
 
         stage('Push Images') {
@@ -194,18 +237,27 @@ pipeline {
             steps {
 
                 sh '''
-                docker push $FRONTEND_REPO:latest
-                docker push $AUTH_REPO:latest
-                docker push $STREAMING_REPO:latest
-                docker push $ADMIN_REPO:latest
-                docker push $CHAT_REPO:latest
+
+                docker push $FRONTEND_REPO:$IMAGE_TAG
+
+                docker push $AUTH_REPO:$IMAGE_TAG
+
+                docker push $ADMIN_REPO:$IMAGE_TAG
+
+                docker push $CHAT_REPO:$IMAGE_TAG
+
+                docker push $STREAMING_REPO:$IMAGE_TAG
+
                 '''
+
             }
+
         }
 
     }
 
 }
+
 ```
 7. Configure the Pipeline Job
   1. Definition: Pipeline script from SCM
